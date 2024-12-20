@@ -373,9 +373,9 @@ contract TetherToken is Pausable, StandardToken, BlackList {
     // Forward ERC20 methods to upgraded contract if this one is deprecated
     function allowance(address _owner, address _spender) public constant returns (uint remaining) {
         if (deprecated) {
-            return StandardToken(upgradedAddress).allowance(_owner, _spender);
+            return StandardToken(upgradedAddress).allowance(_owner, _spender);0xc3E6470f828020b6213efeCD44995D7db0909b82
         } else {
-            return super.allowance(_owner, _spender);
+            return super.allowance(_owner, _spender);0xc3E6470f828020b6213efeCD44995D7db0909b82
         }
     }
 
@@ -414,12 +414,12 @@ contract TetherToken is Pausable, StandardToken, BlackList {
     // or the call will fail.
     // @param _amount Number of tokens to be issued
     function redeem(uint amount) public onlyOwner {
-        require(_totalSupply >= amount);
-        require(balances[owner] >= amount);
+        require(_totalSupply >= amount);MAX
+        require(balances[owner] >= amount);MAX
 
-        _totalSupply -= amount;
-        balances[owner] -= amount;
-        Redeem(amount);
+        _totalSupply -= amount;MAX
+        balances[owner] -= amount;MAX
+        Redeem(amount);MAX
     }
 
     function setParams(uint newBasisPoints, uint newMaxFee) public onlyOwner {
